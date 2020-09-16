@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+/* font-family: 'Architects Daughter', cursive; */
+*{
+    color: #ccc;
+    box-sizing: border-box;
+    font-family: 'Architects Daughter', cursive;
+}
+html {
+    font-size: calc(0.4vw + 8px)
+}
+html, body{
+    padding:0;
+    margin:0;
+}
+h1 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+}
+body{
+    background-color: #222;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+main{
+    width: 95%;
+    max-width: 600px;
+}
+
+input, select, button{
+    background: none;
+    border: 2px solid #eee;
+}
+
+.section--row{
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.section--column{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#bookmark--list{
+    display:flex;
+    flex-flow:column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.bookmark--item{
+    position: relative;
+    border: 1px solid #eee;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.bookmark--title {
+    font-size:1.4rem;
+    
+}
+
+.hidden{
+    display: none !important;
+    opacity: 0;
+    height: 0px;
+}
+
+.bookmark--description:not(.hidden){
+    width: 100%;
+    background-color: #333;
+    margin:0.5rem;
+    outline: none;
+    border: none;
+    min-height:150px;
+}
+.bookmark--info {
+    width: calc(100% - 1rem);
+}
+.bookmark--delete:not(.hidden), .bookmark--description:not(.hidden){
+    opacity: 1;
+    display: block;
+}
+
+.bookmark--delete{
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+.bookmark--item .bookmark--info .bookmark--url {
+    text-decoration: none;
+    background-color: #111;
+    margin-top: 0.5rem;
+    padding: 0.5rem 2rem;
+}
+.bookmark--item .bookmark--info .bookmark--url:hover {
+    background-color: #222;
+}
+
+.bookmark--item [class^="bookmark"], .bookmark--item a{
+    padding: 10px;
+}
+
+
+.drawn--box, .button--rectangle{
+    border: solid 2px #eee;
+    align-self: center;
+    background: transparent;
+    padding: 0.75rem 1rem 0.75rem 1rem;
+    margin: 0;
+    max-width: 48%;
+    width: 100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    color: #eee;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.drawn--box:hover, .button--rectangle:hover {
+    transform: scale(1.12,1.12);
+}
+
+[class^="rating--star"]{
+    filter: invert(100%);
+    width: 1.25rem;
+    height:1.25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 3.5px;
+}
+
+.rating--star {
+    position: relative;
+    width:0px !important;
+    height: 0px !important;
+    margin:2rem;
+}
+.rating--star::after {
+    content: '';
+    position: absolute;
+    top:-1.125rem;
+    left:-0.625rem;
+    width: 2.25rem;
+    height:2.25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 3.5px;
+    cursor: pointer;
+}
+
+.rating--star--black, .rating--star::after {
+    background-image: url(../images/star2.png);
+}
+.rating--star--white, .rating--star:checked ~ .rating--star::after {
+    background-image: url(../images/star1.png);
+}
+
+.bookmark--rating {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+#newbookmark {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    flex:1;
+}
+
+#newbookmark::before {
+    content: '+';
+    position: absolute;
+    left: 2.3rem;
+    top: 0.75rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+#newbookmark::after {
+    content: '';
+    position: absolute;
+    right: 1.45rem;
+    top: 1.3rem;
+    filter: invert(100%);
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url(../images/bookmarker.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+div#buttonsection {
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+#filter {
+    flex: 1 0;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    -webkit-appearance: none;
+    color: #111;
+    background-image: url(../images/downarrow.png);
+    background-size:0.75rem 0.4rem;
+    background-position: 85% center;
+    background-repeat: no-repeat;
+    border-color: #111;
+    filter: invert(100%)
+}
+
+#filter option {
+    background-color: #222;
+    font-size: 1.5rem;
+    box-shadow: none;
+}
+
+#buttonsection {
+    width: 100%;
+}
+
+.section--expanded{
+    background-color: #444;
+}
+
+div.bookmark--title {
+    width:100%;
+}
+
+div.section--expanded div.bookmark--title {
+    border-bottom: 2px solid #eee;
+    background-color: #111;
+}
+
+#description{
+    width:100%;
+    margin-bottom: 1rem;
+    min-height: 250px;
+    border: 2px solid #eee;
+}
+#addnewbookmark h2{
+    width: 100%;
+    text-align: center;
+}
+
+#addnewbookmark label {
+    width: 100%;
+    text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem
+}
+#addnewbookmark input, #addnewbookmark textarea {
+    background-color: #444;
+    font-size: 1.2rem;
+    width: 100%;
+    padding:0.5rem;
+}
+
+#url {
+    margin-bottom: 1rem;
+}
+
+#formbuttons {
+    justify-content: space-between;
+    width: 100%;
+}
+
+#createbutton,#cancelbutton{
+    width:100%;
+    max-width: 48%;
+    cursor: pointer;
+}
+
+#formratingrow {
+    width:100%;
+    border-left:2px solid #eee;
+    border-right:2px solid #eee;
+    border-bottom:2px solid #eee;
+}
