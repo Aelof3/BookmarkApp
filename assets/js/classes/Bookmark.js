@@ -33,7 +33,7 @@ export default class Bookmark {
         this.html.rating = this.$(`<div class="bookmark--rating">
                                         ${this.templateRatings( )}
                                     </div>`);
-        this.html.delete = this.$(`<div class="bookmark--delete hidden">Delete</div>`);
+        this.html.delete = this.$(`<div class="bookmark--delete hidden"></div>`);
         this.html.info = this.$(`<div class="section--column bookmark--info">
                                         <a href="${this.url}" target="_blank" class="bookmark--url hidden">Visit Site</a>
                                     </div>`);
