@@ -71,7 +71,6 @@ export default class BookmarkAPI {
         fetch( `${self.url}bookmarks/${id}`, options )
           .then( r => r.json( ) )
           .then( d => {
-              console.log(d)
             self.send('patchRequestResult', d );
           })
           .catch( e => {
