@@ -4,6 +4,7 @@
     color: #ccc;
     box-sizing: border-box;
     font-family: 'Architects Daughter', cursive;
+    transition-duration: 0.25s;
 }
 html {
     font-size: calc(0.4vw + 8px)
@@ -79,6 +80,7 @@ input, select, button{
     display: none !important;
     opacity: 0;
     height: 0px;
+    flex: 0;
 }
 
 .bookmark--description:not(.hidden){
@@ -108,6 +110,12 @@ input, select, button{
     background-size: contain;
     background-repeat: no-repeat;
     filter: invert(100%);
+}
+
+.bookmark--item:hover:not(.section--expanded){
+    background-color: #111;
+    border-color: #111;
+    filter: invert(100%); 
 }
 
 .bookmark--item .bookmark--info .bookmark--url {
